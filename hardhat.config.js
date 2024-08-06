@@ -1,9 +1,9 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
+require('@nomicfoundation/hardhat-toolbox')
+require('dotenv').config()
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.26",
+  solidity: '0.8.26',
   networks: {
     hardhat: {
       chainId: 31337,
@@ -12,10 +12,11 @@ module.exports = {
       chainId: 534351,
       url: process.env.SCROLL_SEPOLIA_RPC_URL,
       accounts: [process.env.PRIVATE_KEY],
+      gasPrice: 20000000000,
     },
   },
   sourcify: {
-    enabled: false,
+    enabled: true,
   },
   etherscan: {
     apiKey: {
@@ -23,13 +24,13 @@ module.exports = {
     },
     customChains: [
       {
-        network: "scrollSepolia",
+        network: 'scrollSepolia',
         chainId: 534351,
         urls: {
-          apiURL: "https://api-sepolia.scrollscan.com/api",
-          browserURL: "https://sepolia.scrollscan.com",
+          apiURL: 'https://api-sepolia.scrollscan.com/api',
+          browserURL: 'https://sepolia.scrollscan.com/',
         },
       },
     ],
   },
-};
+}
